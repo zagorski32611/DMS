@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<%= render 'layouts/header' %>
+<html>
+  <body>
+    <h1>
+      DMS (title will go here)
+    </h1>
+    <h2>
+      Time to get paid!
+    </h2>
+    <h2>
+      <% if user_signed_in? %>
+        <%= link_to 'Repair Order', ro_home_path %>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
+    </h2>
+  </body>
+
+</html>
