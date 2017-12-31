@@ -1,4 +1,9 @@
-
-<h2><%= @user.first_name %></h2>
-<h2><%= @user.last_name %></h2>
-<h2><%= @user.employee_id %></h2>
+<%= render 'layouts/header' %>
+<h1> All users, will have status </h1>
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.first_name %><br/>
+  <%= user.last_name %><br/>
+  <%= user.employee_id %><br/>
+  <%= user.email %><br/>
+<% end %>

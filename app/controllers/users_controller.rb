@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   before_action :current_user,   only: [:edit, :update, :show]
 
+
   def show
     @user = User.all
   end
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
 
   def index
     if current_user
-      @user = current_user
+      @user = User.all
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
