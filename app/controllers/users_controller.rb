@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :current_user,   only: [:edit, :update, :show]
 
   def show
-    @user = User.find :all
+    @user = User.all
   end
 
   def new
