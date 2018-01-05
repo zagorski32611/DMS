@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/ro_home', to: 'repair_order#ro_home'
 
-  match '/users/:id',     to: 'users#show',       via: 'get'
+  match '/users/:id',     to: 'users#index',       via: 'get'
 
   resources :users
   resources :account_activations, only: [:edit]

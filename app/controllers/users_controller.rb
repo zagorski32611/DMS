@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.all
+    @user = User.find(params[:id])
   end
 
   def new
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
   def index
     if current_user
-      @user = User.all
+        @users = User.all
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
