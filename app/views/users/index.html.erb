@@ -1,13 +1,15 @@
 <%= render 'layouts/header' %>
-<div>
+
+<div class="w3-container center">
+  <h1> this is a list of users </h1>
   <table class="box">
-    <h1> this is a list of users </h1>
     <% @users.each do |user| %>
     <tr>
       <td><%= user.first_name %></td><br/>
       <td><%= user.last_name %></td><br/>
       <td><%= user.employee_id %></td><br/>
       <td><%= user.email %></td><br/>
+      <td><%= user.role %></td><br/>
       <td><%= user.last_sign_in_at.strftime("%-m/%-d/%y %I:%M %p") %></td><br/>
     <% end %>
   </table>
