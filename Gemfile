@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'toastr-rails'
 gem 'cancancan'
+gem 'browser-timezone-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -39,7 +40,7 @@ group :test do
 end
 
 group :production do
-  
+
 end
 
 

@@ -1,9 +1,14 @@
 <%= render 'layouts/header' %>
-<h1> this is a list of users </h1>
-<% @users = User.all %>
-<%= @users.each do |user| %>
-  <%= user.first_name %><br/>
-  <%= user.last_name %><br/>
-  <%= user.employee_id %><br/>
-  <%= user.email %><br/>
-<% end %>
+<div>
+  <table class="box">
+    <h1> this is a list of users </h1>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td><br/>
+      <td><%= user.last_name %></td><br/>
+      <td><%= user.employee_id %></td><br/>
+      <td><%= user.email %></td><br/>
+      <td><%= user.last_sign_in_at.strftime("%-m/%-d/%y %I:%M %p") %></td><br/>
+    <% end %>
+  </table>
+</div>
