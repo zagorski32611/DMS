@@ -15,12 +15,13 @@ Rails.application.routes.draw do
 
 
   get '/ro_home', to: 'repair_order#ro_home'
-  post '/ro_home/new', to: 'repair_order#new'
+  post '/ro_home/new', to: 'repair_order#create'
   get '/ro_home/new', to:'repair_order#new'
   match '/users/:id',     to: 'users#index',       via: 'get'
 
   resources :users
   resources :account_activations, only: [:edit]
   resource :password_resets, only: [:new, :create, :edit, :update]
+  resources :repair_orders
 
 end
