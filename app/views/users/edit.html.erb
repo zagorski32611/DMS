@@ -24,16 +24,11 @@
       <br/>
       <%= f.label :employee_id, "Employee ID" %>
       <%= f.text_field :employee_id, class: "form-control", :required => true %>
-      <p2> Employee Position: (Select only one): </p2>
+      <p2> Employee Position:  </p2>
       <br/>
-      <%= radio_button_tag(:technician, "Technician") %>
-        <%= label_tag(:technician, "Technician") %>
-      <br/>
-      <%= radio_button_tag(:role, "Advisor") %>
-        <%= label_tag(:advisor, "Advisor") %>
-      <br/>
-      <%= radio_button_tag(:manager, "Manager") %>
-        <%= label_tag(:manager, "Manager") %>
+      <div class="field">
+        <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
+      </div>
       <br/>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
