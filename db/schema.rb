@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105102908) do
+ActiveRecord::Schema.define(version: 20180107145719) do
+
+  create_table "repair_orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "VIN"
+    t.integer "year"
+    t.string "make"
+    t.string "model"
+    t.string "trim"
+    t.integer "miles"
+    t.string "color"
+    t.string "window_tag"
+    t.text "line"
+    t.datetime "due_date"
+    t.datetime "update_time"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
