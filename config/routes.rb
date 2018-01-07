@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :account_activations, only: [:edit]
-  resource :password_resets, only: [:new, :create, :edit, :update]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
@@ -20,5 +17,8 @@ Rails.application.routes.draw do
   post '/ro_home/create', to: 'repair_order#ro_create'
   match '/users/:id',     to: 'users#index',       via: 'get'
 
+  resources :users
+  resources :account_activations, only: [:edit]
+  resource :password_resets, only: [:new, :create, :edit, :update]
 
 end

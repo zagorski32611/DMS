@@ -18,6 +18,7 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'cancancan'
 gem 'browser-timezone-rails'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
