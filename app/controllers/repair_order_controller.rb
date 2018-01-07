@@ -5,4 +5,9 @@ class RepairOrderController < ApplicationController
   def ro_home
   end
 
+  def ro_new
+  end
+
+  
+
 end
