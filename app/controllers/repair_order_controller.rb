@@ -3,6 +3,7 @@ class RepairOrderController < ApplicationController
 
   before_action :authenticate_user!
 
+
   def ro_home
   end
 
@@ -11,7 +12,18 @@ class RepairOrderController < ApplicationController
   end
 
   def create
-    @repair_order = RepairOrder.new
+    @repair_order = RepairOrder.new(ro_params)
+    @repair_order.user_id = current_user.id if current_user
+    if @repair_order.save
+      flash[:success] = "Repair order created!"
+      redirect_to ro_home_path
+    else
+      render 'new'
+    end
+  end
+
+  def show
+    @repair_order = RepairOrder.find(params[:id])
   end
 
 
@@ -22,20 +34,7 @@ class RepairOrderController < ApplicationController
                                          :miles, :color, :window_tag,
                                          :due_date, :update_time)
   end
+
+
+
 end
-
-=begin
-RO Values
-VIN
-Year
-Make
-Model
-Trim
-Miles
-Color
-Window Tag
-Lines 1..n
-Due Date
-Update Time
-
-=end
