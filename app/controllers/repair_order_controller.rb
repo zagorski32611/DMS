@@ -12,8 +12,8 @@ class RepairOrderController < ApplicationController
   end
 
   def create
-    @repair_order = RepairOrder.new(ro_params)
-    @repair_order.user_id = current_user.id if current_user
+    @repair_order = RepairOrder.create(ro_params)
+    @repair_order.user_id = current_user.id
     if @repair_order.save
       flash[:success] = "Repair order created!"
       redirect_to ro_home_path
@@ -30,11 +30,8 @@ class RepairOrderController < ApplicationController
   private
 
   def ro_params
-    params.require(:repair_order).permit(:VIN, :year, :make, :model, :trim,
-                                         :miles, :color, :window_tag,
-                                         :due_date, :update_time)
+    params.require(:repair_order).permit(:VIN, :window_tag, :color, :year, :make, :model, :trim, :mile, :due_date, :update_time, :line)
   end
-
 
 
 end

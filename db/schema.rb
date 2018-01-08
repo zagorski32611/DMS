@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20180107145719) do
 
   create_table "repair_orders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", null: true
+    t.datetime "updated_at", null: true
     t.string "VIN"
     t.integer "year"
     t.string "make"

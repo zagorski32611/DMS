@@ -3,13 +3,7 @@
 
 <h4> Repair Orders assigned to you </h4>
 
-<li>
+<%= render 'layouts/repair_order_list' %>
 
-    <%= @repair_order.each do |order| %>
-      <%= order.window_tag %>
-      <%= order.color %>
-      <%= order.make %>
-  <% end %>
-</li>
 
 <h3><%= link_to "Create New Repair Order", ro_home_new_path %>&nbsp;</h3>
