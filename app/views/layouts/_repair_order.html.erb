@@ -1,7 +1,9 @@
 <form>
   <div class="form_goup row">
     <div class="form-inline center mb-3">
-      <%= form_for(@repair_order) do |f| %>
+      <%= form_for @repair_order, :url => {:action => "create"} do |f| %>
+    
+
         <%= f.label :VIN %>
         <%= f.text_field :VIN, class: 'form-control', :required => true %>&nbsp;
 
