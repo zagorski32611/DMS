@@ -10,11 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107145719) do
+ActiveRecord::Schema.define(version: 20180109114532) do
+
+  create_table "associations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "cell_phone"
+    t.string "home_phone"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "zip_code"
+    t.string "email"
+    t.string "email2"
+  end
 
   create_table "repair_orders", force: :cascade do |t|
-    t.datetime "created_at", null: true
-    t.datetime "updated_at", null: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "VIN"
     t.integer "year"
     t.string "make"
@@ -47,6 +67,17 @@ ActiveRecord::Schema.define(version: 20180107145719) do
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "VIN"
+    t.integer "year"
+    t.string "make"
+    t.string "model"
+    t.string "trim"
+    t.integer "miles"
   end
 
 end

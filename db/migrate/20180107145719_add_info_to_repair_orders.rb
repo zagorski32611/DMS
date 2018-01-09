@@ -1,5 +1,7 @@
 class AddInfoToRepairOrders < ActiveRecord::Migration[5.1]
   def change
+    t.belongs_to :customers
+    
     add_column :repair_orders, :VIN, :string
     add_column :repair_orders, :year, :integer
     add_column :repair_orders, :make, :string
