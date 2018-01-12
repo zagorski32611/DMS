@@ -1,43 +1,44 @@
 <form>
   <div class="form_goup row">
     <div class="form-inline center mb-3">
-      <%= form_for(@repair_order) do |f| %>
+      <%= form_for @repair_order do |f| %>
+
         <%= f.label :VIN %>
-        <%= f.text_field :VIN, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :VIN,  :required => true %>&nbsp;
 
         <button type="submit" class="btn btn-outline-primary btn-sm">Search VIN</button>&nbsp;
 
         <%= f.label :window_tag %>
-        <%= f.text_field :window_tag, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :window_tag,  :required => true %>&nbsp;
 
         <%= f.label :color %>
-        <%= f.text_field :color, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :color,  :required => true %>&nbsp;
 
     </div><br/>
 
     <div class="form-inline text-center mb-3 ">
         <%= f.label :year %>
-        <%= f.text_field :year, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :year, :required => true %>&nbsp;
 
         <%= f.label :make %>
-        <%= f.text_field :make, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :make, :required => true %>&nbsp;
 
         <%= f.label :model %>
-        <%= f.text_field :model, class: 'form-control', :required => true %>&nbsp;
+        <%= f.text_field :model, :required => true %>&nbsp;
 
         <%= f.label :trim %>
-        <%= f.text_field :trim, class: 'form-control' %>&nbsp;
+        <%= f.text_field :trim %>&nbsp;
     </div><br/>
-
+    <% if false %>
     <div class="form-inline center mb-3 ">
         <%= f.label :miles %>
-        <%= f.text_field :miles, class: 'form-control' %>&nbsp;
-
+        <%= f.text_field :miles %>&nbsp;
+    <% end %>
         <%= f.label :due_date %>
-        <%= f.text_field :due_date, class: 'form-control' %>&nbsp;
+        <%= f.text_field :due_date %>&nbsp;
 
         <%= f.label :update_time %>
-        <%= f.text_field :update_time, class: 'form-control' %>&nbsp;
+        <%= f.text_field :update_time %>&nbsp;
 
     </div><br/>
     <div class="center mb-3 ">
@@ -46,5 +47,6 @@
     </div>
     <div class="center mb-3">
       <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
+
     </div>
       <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109115807) do
+ActiveRecord::Schema.define(version: 20180109114532) do
 
   create_table "associations", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20180109115807) do
     t.integer "customer_id", null: false
     t.integer "vehicle_id", null: false
     t.index ["customer_id"], name: "index_customers_vehicles_on_customer_id"
-    t.index [nil], name: "index_customers_vehicles_on_vehile_id"
   end
 
   create_table "repair_orders", force: :cascade do |t|

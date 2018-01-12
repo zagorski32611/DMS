@@ -1,36 +1,43 @@
 class RepairOrderController < ApplicationController
 
 
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
 
-  def ro_home
+  def repair_order
   end
 
   def new
-    @repair_order = RepairOrder.new
+    @repair_order = RepairOrder.new(ro_params)
+    #@repair_order.save!(ro_params)
   end
 
   def create
-    @repair_order = RepairOrder.create(ro_params)
-    @repair_order.user_id = current_user.id
-    if @repair_order.save
+    @repair_order = RepairOrder.new(ro_params)
+
+    if @repair_order.save!
       flash[:success] = "Repair order created!"
-      redirect_to ro_home_path
+      redirect_to new_repair_order_path
     else
       render 'new'
     end
   end
 
   def show
-    @repair_order = RepairOrder.find(params[:id])
+    @repair_order = RepairOrder.find(ro_params[:id])
+  end
+
+  def index
+    @repair_order = RepairOrder.find(ro_params[:id])
   end
 
 
   private
 
   def ro_params
-    params.require(:repair_order).permit(:VIN, :window_tag, :color, :year, :make, :model, :trim, :mile, :due_date, :update_time, :line)
+    params.permit(:VIN, :window_tag,
+                  :color, :year, :make, :model, :trim, :miles, :due_date,
+                  :update_time, :line)
   end
 
 

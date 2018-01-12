@@ -13,15 +13,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-
-  get '/ro_home', to: 'repair_order#ro_home'
-  post '/ro_home/new', to: 'repair_order#create'
-  get '/ro_home/new', to:'repair_order#new'
   match '/users/:id',     to: 'users#index',       via: 'get'
 
   resources :users
   resources :account_activations, only: [:edit]
   resource :password_resets, only: [:new, :create, :edit, :update]
-  resources :repair_orders
+  resources :repair_orders, controller: 'repair_order'
 
 end
