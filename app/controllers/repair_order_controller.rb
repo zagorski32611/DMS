@@ -25,7 +25,7 @@ class RepairOrderController < ApplicationController
   end
 
   def index
-    #@repair_order = RepairOrder.find(ro_params)
+    @repair_order = RepairOrder.all
   end
 
 

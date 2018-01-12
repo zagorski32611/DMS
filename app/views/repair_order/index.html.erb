@@ -1,2 +1,14 @@
 <h1> this is all repair orders </h1>
 <h3><%= link_to "Create New Repair Order", new_repair_order_url %>&nbsp;</h3>
+
+
+<table class="box">
+  <% @repair_order.each do |ro| %>
+  <tr>
+    <td><%= ro.window_tag %></td><br/>
+    <td><%= ro.year %></td><br/>
+    <td><%= ro.color %></td><br/>
+    <td><%= ro.miles %></td><br/>
+
+  <% end %>
+</table>
