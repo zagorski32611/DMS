@@ -8,8 +8,7 @@ class RepairOrderController < ApplicationController
   end
 
   def new
-
-    @repair_order = RepairOrder.new(ro_params)
+    @repair_order = RepairOrder.new
     #@repair_order.save(ro_params)
   end
 
@@ -17,7 +16,7 @@ class RepairOrderController < ApplicationController
     @repair_order = RepairOrder.new(ro_params)
     @repair_order.save
     redirect_to repair_orders_path
-
+    #raise "Found create!"
   end
 
 
@@ -33,8 +32,8 @@ class RepairOrderController < ApplicationController
   private
 
   def ro_params
-    params.require(:repair_orders).permit(:VIN, :window_tag,
+    params.require(:repair_order).permit(:VIN, :window_tag,
                   :color, :year, :make, :model, :trim, :miles, :due_date,
-                  :update_time, :line)  if params[:repair_orders].present?
+                  :update_time, :line)
   end
 end
