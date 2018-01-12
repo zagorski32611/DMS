@@ -1,7 +1,9 @@
-<form>
+
   <div class="form_goup row">
     <div class="form-inline center mb-3">
-      <%= form_for @repair_order do |f| %>
+      <%= form_for @repair_order, :html => { :class => "form-stacked" }  do |f| %>
+
+      
 
         <%= f.label :VIN %>
         <%= f.text_field :VIN,  :required => true %>&nbsp;
@@ -29,11 +31,11 @@
         <%= f.label :trim %>
         <%= f.text_field :trim %>&nbsp;
     </div><br/>
-    <% if false %>
+
     <div class="form-inline center mb-3 ">
         <%= f.label :miles %>
         <%= f.text_field :miles %>&nbsp;
-    <% end %>
+
         <%= f.label :due_date %>
         <%= f.text_field :due_date %>&nbsp;
 
@@ -49,4 +51,4 @@
       <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
 
     </div>
-      <% end %>
+    <% end %>
