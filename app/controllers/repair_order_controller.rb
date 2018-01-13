@@ -1,7 +1,7 @@
 class RepairOrderController < ApplicationController
 
 
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
 
   def repair_order

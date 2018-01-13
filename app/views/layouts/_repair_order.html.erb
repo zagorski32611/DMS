@@ -1,5 +1,4 @@
 
-  <div class="form_goup row">
     <div class="form-inline center mb-3">
       <%= form_for @repair_order  do |f| %>
 
@@ -45,10 +44,10 @@
     </div><br/>
     <div class="center mb-3 ">
         <%= f.label :line %>
-        <%= f.text_area :line, size: '30x10' %>&nbsp;
+        <%= f.text_area :line, size: '50x10' %>&nbsp;
     </div>
     <div class="center mb-3">
       <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
+      <% end %>
 
     </div>
-    <% end %>

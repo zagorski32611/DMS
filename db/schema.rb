@@ -10,33 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109114532) do
-
-  create_table "associations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "cell_phone"
-    t.string "home_phone"
-    t.string "street_address"
-    t.string "city"
-    t.string "state"
-    t.string "zip_code"
-    t.string "email"
-    t.string "email2"
-  end
-
-  create_table "customers_vehicles", id: false, force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "vehicle_id", null: false
-    t.index ["customer_id"], name: "index_customers_vehicles_on_customer_id"
-  end
+ActiveRecord::Schema.define(version: 20180113134148) do
 
   create_table "repair_orders", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -84,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180109114532) do
     t.string "model"
     t.string "trim"
     t.integer "miles"
+    t.string "color"
   end
 
 end
