@@ -4,3 +4,7 @@
 
 
 <h3>Search Vehicles </h3>
+<%= form_tag(vehicles_path, method: :get) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search' %>
+<% end %>

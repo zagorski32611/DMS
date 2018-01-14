@@ -3,9 +3,6 @@ class VehiclesController < ApplicationController
   def home
   end
 
-  def index
-    @vehicle = Vehicle.last
-  end
 
   def show
   end
@@ -24,6 +21,10 @@ class VehiclesController < ApplicationController
     end
   end
 
+
+  def index
+      @vehicle = Vehicle.all
+  end
 
 
   private

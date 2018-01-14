@@ -3,8 +3,7 @@
 
 
   <div class="form-inline text-center mb-3 ">
-    <h3> Enter the full VIN number </h3>
-    <%= f.label :VIN %>
+    <%= f.label :VIN, "Full VIN" %>
     <%= f.text_field :VIN,  :required => true %>&nbsp;
       <%= f.label :year %>
       <%= f.text_field :year, :required => true %>&nbsp;
@@ -21,9 +20,6 @@
       <%= f.label :color %>
       <%= f.text_field :color,  :required => true %>&nbsp;
     </div><br/>
-
-    <button type="submit" class="btn btn-outline-primary btn-sm">Search VIN</button>&nbsp;
-
 
 </div><br/>
 
