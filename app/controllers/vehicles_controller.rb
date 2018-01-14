@@ -16,8 +16,13 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(veh_params)
-    @vehicle.save
-    redirect_to vehicles_path
+    if @vehicle.save
+      flash.now[:success] = "Vehicle Saved!"
+      redirect_to vehicles_path
+    else
+      flash.now[:error] = "Vehicle already exists."
+      redirect_to new_vehicle_path
+    end
   end
 
   private

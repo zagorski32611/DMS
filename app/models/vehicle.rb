@@ -5,4 +5,5 @@ class Vehicle < ApplicationRecord
   has_many :repair_orders
   #belongs_to :customer
 
+  validates :VIN, :presence => true, :uniqueness => true
 end
