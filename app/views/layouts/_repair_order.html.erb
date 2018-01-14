@@ -14,9 +14,7 @@
         <%= f.label :color %>
         <%= f.text_field :color,  :required => true %>&nbsp;
 
-    </div><br/>
 
-    <div class="form-inline text-center mb-3 ">
         <%= f.label :year %>
         <%= f.text_field :year, :required => true %>&nbsp;
 
@@ -28,9 +26,7 @@
 
         <%= f.label :trim %>
         <%= f.text_field :trim %>&nbsp;
-    </div><br/>
 
-    <div class="form-inline center mb-3 ">
         <%= f.label :miles %>
         <%= f.text_field :miles %>&nbsp;
 
@@ -40,12 +36,12 @@
         <%= f.label :update_time %>
         <%= f.text_field :update_time %>&nbsp;
 
-    </div><br/>
-    <div class="center mb-3 ">
+
+
         <%= f.label :line %>
         <%= f.text_area :line, size: '50x10' %>&nbsp;
-    </div>
-    <div class="center mb-3">
+
+
       <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
       <% end %>
 

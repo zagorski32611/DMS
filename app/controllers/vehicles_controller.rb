@@ -4,6 +4,7 @@ class VehiclesController < ApplicationController
   end
 
   def index
+    @vehicle = Vehicle.last
   end
 
   def show
@@ -16,12 +17,13 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(veh_params)
     @vehicle.save
+    redirect_to vehicles_path
   end
 
   private
 
   def veh_params
-    params.require(:vehicle).permit(:VIN, :year, :make, :model, :trim, :miles
+    params.require(:vehicle).permit(:VIN, :year, :make, :model, :trim, :miles,
                                     :color)
   end
 end
