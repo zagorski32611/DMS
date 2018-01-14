@@ -3,6 +3,7 @@
       <% if user_signed_in? %>
         <%= link_to "Employees", current_user %>&nbsp;
         <%= link_to "Repair Orders", repair_orders_url %>&nbsp;
+        <%= link_to "Vehicles", vehicles_url %>&nbsp;
         <%= link_to "Settings", edit_user_path(current_user) %>&nbsp;
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>&nbsp;
       <% else %>
