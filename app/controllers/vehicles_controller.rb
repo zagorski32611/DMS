@@ -17,13 +17,14 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(veh_params)
     if @vehicle.save
-      flash.now[:success] = "Vehicle Saved!"
-      redirect_to vehicles_path
+      flash[:notice] = "Vehicle Saved!"
+      render new_vehicle_path
     else
-      flash.now[:error] = "Vehicle already exists."
-      redirect_to new_vehicle_path
+      flash[:alert] = "Vehicle already in system!"
     end
   end
+
+
 
   private
 

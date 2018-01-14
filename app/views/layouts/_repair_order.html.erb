@@ -1,8 +1,6 @@
     <div class="form-inline center mb-3">
       <%= form_for @repair_order  do |f| %>
 
-
-
         <%= f.label :VIN %>
         <%= f.text_field :VIN,  :required => true %>&nbsp;
 
@@ -13,8 +11,8 @@
 
         <%= f.label :color %>
         <%= f.text_field :color,  :required => true %>&nbsp;
-
-
+        <br/>
+        <br/>
         <%= f.label :year %>
         <%= f.text_field :year, :required => true %>&nbsp;
 
@@ -26,7 +24,8 @@
 
         <%= f.label :trim %>
         <%= f.text_field :trim %>&nbsp;
-
+        <br/>
+        <br/>
         <%= f.label :miles %>
         <%= f.text_field :miles %>&nbsp;
 
@@ -35,8 +34,8 @@
 
         <%= f.label :update_time %>
         <%= f.text_field :update_time %>&nbsp;
-
-
+        <br/>
+        <br/>
 
         <%= f.label :line %>
         <%= f.text_area :line, size: '50x10' %>&nbsp;
