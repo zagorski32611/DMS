@@ -8,3 +8,17 @@
   <%= text_field_tag :term %>
   <%= submit_tag 'Search' %>
 <% end %>
+
+
+<table class="box">
+  <% @vehicle.each do | veh | %>
+  <tr>
+    <td><%= veh.VIN %></td><br/>
+    <td><%= veh.model %></td><br/>
+    <td><%= veh.make %></td><br/>
+    <td><%= veh.trim%>
+    <td><%= veh.color %></td><br/>
+    <td><%= veh.miles %></td><br/>
+
+  <% end %>
+</table>

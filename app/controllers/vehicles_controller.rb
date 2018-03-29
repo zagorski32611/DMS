@@ -8,17 +8,14 @@ class VehiclesController < ApplicationController
   end
 
   def new
-    @vehicles = Vehicle.new
+    @vehicle = Vehicle.new
   end
 
   def create
     @vehicle = Vehicle.new(veh_params)
-    if @vehicle.save
-      flash[:notice] = "Vehicle Saved!"
-      render new_vehicle_path
-    else
-      flash[:alert] = "Vehicle already in system!"
-    end
+    @vehicle.save
+    flash[:notice] = "Vehicle Saved!"
+    render vehicle_path
   end
 
 
