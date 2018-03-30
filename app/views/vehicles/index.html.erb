@@ -9,9 +9,9 @@
   <%= submit_tag 'Search' %>
 <% end %>
 
-
 <table class="box">
-  <% @vehicle.each do | veh | %>
+<% unless @vehicles.nil? %>
+  <% @vehicles.each do | veh | %>
   <tr>
     <td><%= veh.VIN %></td><br/>
     <td><%= veh.model %></td><br/>
@@ -21,4 +21,5 @@
     <td><%= veh.miles %></td><br/>
 
   <% end %>
+<% end %>
 </table>

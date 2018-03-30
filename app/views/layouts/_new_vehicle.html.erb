@@ -1,7 +1,5 @@
 <div class="form-inline center mb-3">
   <%= form_for @vehicle  do |f| %>
-
-
   <div class="form-inline text-center mb-3 ">
     <%= f.label :VIN, "Full VIN" %>
     <%= f.text_field :VIN,  :required => true %>&nbsp;
@@ -19,20 +17,8 @@
 
       <%= f.label :color %>
       <%= f.text_field :color,  :required => true %>&nbsp;
-    </div><br/>
-
-</div><br/>
-
-
-<div class="form-inline center mb-3 ">
-    <%= f.label :miles %>
-    <%= f.text_field :miles %>&nbsp;
-
-
-
-</div>
-<div class="center mb-3">
-  <%= f.submit "Save", class: "btn btn-primary" %>
+      <%= f.label :miles %>
+      <%= f.text_field :miles %>&nbsp;
+      <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
-
 </div>

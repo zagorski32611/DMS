@@ -1,10 +1,13 @@
 class VehiclesController < ApplicationController
+  before_action :authenticate_user!
+
 
   def home
   end
 
 
   def show
+    @vehicles.find(params[:id])
   end
 
   def new
@@ -15,12 +18,12 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new(veh_params)
     @vehicle.save
     flash[:notice] = "Vehicle Saved!"
-    render vehicle_path
+    render vehicles_index_path
   end
 
 
   def index
-      @vehicle = Vehicle.all
+      @vehicles = Vehicle.all
   end
 
 
