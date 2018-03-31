@@ -12,10 +12,11 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(cust_params)
     @customer.save
+    redirect_to customers_path
   end
 
   def show
-    @customers.find(params[:id])
+    @customers = Customer.all
   end
 
   def index
@@ -31,15 +32,4 @@ class CustomersController < ApplicationController
   end
 end
 
-=begin
-t.string "first_name"
-t.string "last_name"
-t.string "street"
-t.string "city"
-t.string "state"
-t.integer "zip"
-t.integer "phone_number1"
-t.integer "phone_number2"
-t.string "email"
-t.string "email2"
-=end
+

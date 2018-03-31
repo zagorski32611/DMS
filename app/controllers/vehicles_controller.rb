@@ -1,10 +1,8 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
 
-
   def home
   end
-
 
   def show
     @vehicles.find(params[:id])
@@ -21,11 +19,9 @@ class VehiclesController < ApplicationController
     render vehicles_index_path
   end
 
-
   def index
       @vehicles = Vehicle.all
   end
-
 
   private
 
