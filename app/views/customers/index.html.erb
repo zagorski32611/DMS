@@ -2,14 +2,29 @@
 
 <h3><%= link_to "Add New Customer", new_customer_path %>&nbsp;</h3>
 
-<% unless @customers.nil? %>
-    <% @customers.each do | cust | %>
-        <%= cust.first_name %>
-        <%= cust.last_name %>
-        <%= cust.phone_number1 %>
-        <%= cust.email %>
+<table class="box">
+    <% unless @customers.nil? %>
+        <tr>
+            <th> First Name </th>&nbsp;
+            <th> Last Name </th>&nbsp;
+            <th> Phone Number 1 </th>&nbsp;
+            <th> Phone Number 2 </th>&nbsp;
+            <th> Email </th>&nbsp;
+            <th> Edit </th>&nbsp;
+            <th> Delete </th>&nbsp;
+        <tr>
+        <% @customers.each do | cust | %>
+        <tr>
+            <td><%= cust.first_name %></td>
+            <td><%= cust.last_name %></td>
+            <td><%= cust.phone_number1 %></td>
+            <td><%= cust.phone_number1 %></td>
+            <td><%= cust.email %></td>
+            <td><%= link_to 'Edit', edit_customer_path(cust) %></td>
+            <td><%= link_to 'Delete', {action: "destroy", id: cust.id }, method: :delete %></td>
+        </tr>
+        <% end %>
+    <% else %>
+        <% link_to new_customer_path %>
     <% end %>
-<% else %>
-    <% link_to new_customer_path %>
-<% end %>
-
+</table>

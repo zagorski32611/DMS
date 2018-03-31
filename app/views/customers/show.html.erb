@@ -1,0 +1,26 @@
+<html>
+    <header>
+        <%= render 'layouts/header' %>
+    </header>
+    <body>
+        <h1> Saved Customer Information: </h1>
+        <table class="table">
+            <tr>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Phone Number </th>
+                <th> Email </th>
+                <th> Phone Number 2 </th>
+            <tr>
+            <tr>
+                <td><%= @customers.first_name %></td>
+
+            </tr>
+        </table>
+
+        </br>
+        <%= link_to "Create another", new_customer_url %>
+        <br/>
+        <%= link_to "See all", root_path %>
+    </body>
+</html>

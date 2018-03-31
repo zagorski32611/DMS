@@ -1,0 +1,37 @@
+<h1> Edit customer information </h1>
+<div class="form-inline center mb-3">
+  <%= form_for @customers do |f| %>
+  <div class="form-inline text-center mb-3 ">
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name,  :required => true %>&nbsp;
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :required => true %>&nbsp;
+
+    <%= f.label :phone_number1 %>
+    <%= f.text_field :phone_number1, :required => true %>&nbsp;
+
+    <%= f.label :phone_number2 %>
+    <%= f.text_field :phone_number2 %>&nbsp;
+
+    <%= f.label :email %>
+    <%= f.text_field :email,  :required => true %>&nbsp;
+
+    <%= f.label :email2 %>
+    <%= f.text_field :email2 %>&nbsp;
+
+    <%= f.label :street %>
+    <%= f.text_field :street %>&nbsp;
+
+    <%= f.label :city %>
+    <%= f.text_field :city %>&nbsp;
+
+    <%= f.label :state %>
+    <%= f.text_field :state %>&nbsp;
+
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>&nbsp;
+
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
