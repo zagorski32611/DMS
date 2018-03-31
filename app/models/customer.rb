@@ -3,3 +3,5 @@ class Customer < ApplicationRecord
   has_many :repair_orders
   
 end
+
+

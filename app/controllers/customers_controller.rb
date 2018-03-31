@@ -1,5 +1,10 @@
 class CustomersController < ApplicationController
 
+  before_action :authenticate_user!
+
+  def home
+  end
+
   def new
     @cusotmer = Customer.new
   end
@@ -10,11 +15,11 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.all
+    @customers.find(params[:id])
   end
 
   def index
-    @customer = Customer.all
+    @customers = Customer.all
   end
 
   private
@@ -23,7 +28,7 @@ class CustomersController < ApplicationController
     params.require(:customer).permit(:first_name, :last_name, :street, :city,
                                      :state, :zip, :phone_number1, :phone_number2,
                                      :email, :email2)
-
+  end
 end
 
 =begin

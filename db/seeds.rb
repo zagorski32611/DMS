@@ -21,3 +21,10 @@
     {update_time: 01/03/18}
 
     ])
+
+    customer = Customer.create([
+      {first_name: 'Joe'},
+      {last_name: 'Iskrogaz'},
+      {phone_number1: '216-867-5309'},
+      {email: 'joe@gmail.com'}
+    ])
