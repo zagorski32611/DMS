@@ -16,7 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'toastr-rails'
-
+gem 'loofah', '~> 2.2.1'
 gem 'browser-timezone-rails'
 gem 'bootstrap-sass'
 
