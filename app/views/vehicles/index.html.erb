@@ -10,16 +10,31 @@
 <% end %>
 
 <table class="box">
-<% unless @vehicles.nil? %>
-  <% @vehicles.each do | veh | %>
-  <tr>
-    <td><%= veh.VIN %></td><br/>
-    <td><%= veh.model %></td><br/>
-    <td><%= veh.make %></td><br/>
-    <td><%= veh.trim%>
-    <td><%= veh.color %></td><br/>
-    <td><%= veh.miles %></td><br/>
-
-  <% end %>
-<% end %>
+    <% unless @vehicles.nil? %>
+        <tr>
+            <th> VIN </th>&nbsp;
+            <th> Make </th>&nbsp;
+            <th> Model </th>&nbsp;
+            <th> Trim </th>&nbsp;
+            <th> Miles </th>&nbsp;
+            <th> Color </th>&nbsp;
+            <th> Edit </th>&nbsp;
+            <th> Delete </th>&nbsp;
+        <tr>
+        <% @vehicles.each do | veh | %>
+        <tr>
+            <td><%= veh.VIN %></td>
+            <td><%= veh.make %></td>
+            <td><%= veh.model %></td>
+            <td><%= veh.trim %></td>
+            <td><%= veh.miles %></td>
+            <td><%= veh.color %></td>
+            <td><%= link_to 'Edit', edit_vehicle_path(veh) %></td>
+            <td><%= link_to 'Delete', {action: "destroy", id: veh.id }, method: :delete %></td>
+        </tr>
+        <% end %>
+    <% else %>
+        <% link_to new_customer_path %>
+    <% end %>
 </table>
+  

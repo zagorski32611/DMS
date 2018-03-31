@@ -1,7 +1,8 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
 
-  def home
+  def index
+    @vehicles = Vehicle.all
   end
 
   def show
@@ -12,15 +13,34 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new
   end
 
+  def edit
+    @vehicle = Vehicle.find(params[:id])
+  end
+
   def create
     @vehicle = Vehicle.new(veh_params)
     @vehicle.save
     flash[:notice] = "Vehicle Saved!"
-    render vehicles_index_path
+    redirect_to vehicles_path
   end
 
-  def index
-      @vehicles = Vehicle.all
+  def update
+    @vehicle = Vehicle.find(params[:id])
+    if @vehicle.update(veh_params)
+      flash[:success] = "Successfully updated vehicle"
+      redirect_to vehicles_path
+    else
+      flash[:alert] = "Error updating vehicle"
+      render :edit
+    end
+  end
+
+  def destroy
+    @vehicle = Vehicle.find(params[:id])
+    if @vehicle.present?
+      @vehicle.destroy
+    end
+    redirect_to vehicles_path
   end
 
   private
