@@ -5,13 +5,28 @@
 
 
 <table class="box">
-  <% @repair_order.each do |ro| %>
-  <tr>
-    <td><%= ro.window_tag %></td><br/>
-    <td><%= ro.model %></td><br/>
-    <td><%= ro.make %></td><br/>
-    <td><%= ro.color %></td><br/>
-    <td><%= ro.miles %></td><br/>
-
-  <% end %>
+    <% unless @repair_orders.nil? %>
+        <tr>
+            <th> First Name </th>&nbsp;
+            <th> Last Name </th>&nbsp;
+            <th> Phone Number 1 </th>&nbsp;
+            <th> Phone Number 2 </th>&nbsp;
+            <th> Email </th>&nbsp;
+            <th> Edit </th>&nbsp;
+            <th> Delete </th>&nbsp;
+        <tr>
+        <% @repair_orders.each do | ro | %>
+        <tr>
+            <td><%= ro.first_name %></td>
+            <td><%= ro.last_name %></td>
+            <td><%= ro.phone_number1 %></td>
+            <td><%= ro.phone_number1 %></td>
+            <td><%= ro.email %></td>
+            <td><%= link_to 'Edit', edit_repair_order_path(ro) %></td>
+            <td><%= link_to 'Delete', {action: "destroy", id: ro.id }, method: :delete %></td>
+        </tr>
+        <% end %>
+    <% else %>
+        <% link_to new_customer_path %>
+    <% end %>
 </table>

@@ -1,15 +1,21 @@
 class RepairOrderController < ApplicationController
 
-
   before_action :authenticate_user!
 
+  def index
+    @repair_order = RepairOrder.all
+  end
 
-  def repair_order
+  def show
+    @repair_orders = RepairOrder.last
   end
 
   def new
     @repair_order = RepairOrder.new
-    #@repair_order.save(ro_params)
+  end
+
+  def edit
+    @repair_orders = RepairOrder.find(params[:id])
   end
 
   def create
@@ -19,15 +25,27 @@ class RepairOrderController < ApplicationController
     #raise "Found create!"
   end
 
-
-  def show
-    @repair_order = RepairOrder.last
+  def update
+    @repair_order = RepairOrder.find(params[:id])
+    if @repair_order.update(ro_params)
+      flash[:success] = "Successfully updated repair order"
+      redirect_to repair_orders_path
+    else
+      flash[:alert] = "Error updating repair order"
+      render :edit
+    end
   end
 
-  def index
-    @repair_order = RepairOrder.all
+  def destroy
+    @repair_order = RepairOrder.find(params[:id])
+    if @repair_order.present?
+      @repair_order.destroy
+    end
+    redirect_to repair_orders_path
   end
 
+  def repair_order
+  end
 
   private
 
@@ -36,4 +54,5 @@ class RepairOrderController < ApplicationController
                   :color, :year, :make, :model, :trim, :miles, :due_date,
                   :update_time, :line)
   end
+
 end
