@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   resource :password_resets, only: [:new, :create, :edit, :update]
   resources :repair_orders, controller: 'repair_order'
   resources :vehicles, controller: 'vehicles'
-  resource :customers, controller: 'customers'
+  resources :customers, controller: 'customers'
 end

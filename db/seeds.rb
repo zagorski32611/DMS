@@ -28,3 +28,13 @@
       {phone_number1: '216-867-5309'},
       {email: 'joe@gmail.com'}
     ])
+
+    vehicle = Vehicle.create([
+      {VIN: '123'},
+      {year: 2003},
+      {make: "Land Rover"},
+      {model: "Discovery"},
+      {trim: "SE"},
+      {miles: 1},
+      {color: "Black"},
+    ])

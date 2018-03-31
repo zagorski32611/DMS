@@ -12,11 +12,12 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(cust_params)
     @customer.save
-    redirect_to customers_path
+    flash[:notice] = "Customer Saved!"
+    redirect_to customers_path(@customers)
   end
 
   def show
-    @customers = Customer.all
+    @customers = Customer.last
   end
 
   def index
