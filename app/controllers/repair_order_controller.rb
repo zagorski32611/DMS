@@ -15,7 +15,7 @@ class RepairOrderController < ApplicationController
   end
 
   def edit
-    @repair_orders = RepairOrder.find(params[:id])
+    @repair_order = RepairOrder.find(params[:id])
   end
 
   def create
