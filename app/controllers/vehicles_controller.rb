@@ -2,7 +2,7 @@ class VehiclesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.search(params[:term])
   end
 
   def show
@@ -47,6 +47,6 @@ class VehiclesController < ApplicationController
 
   def veh_params
     params.require(:vehicle).permit(:VIN, :year, :make, :model, :trim, :miles,
-                                    :color)
+                                    :color, :term)
   end
 end
