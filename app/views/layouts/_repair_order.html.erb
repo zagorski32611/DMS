@@ -1,16 +1,14 @@
-    <div class="form-inline center mb-3">
+    <div class="form-inline align_left mb-3">
       <%= form_for @repair_order  do |f| %>
 
         <%= f.label :VIN %>
         <%= f.text_field :VIN,  :required => true %>&nbsp;
 
-        
         <%= form_tag(new_vehicle_path, method: :get) do %>
-        <%= label_tag "Search by VIN" %>
-        <%= text_field_tag :term, params[:term] %></br>
         <%= submit_tag 'Search VIN' %>
         <% end %>
-
+        
+        </br>
         <%= f.label :window_tag %>
         <%= f.text_field :window_tag,  :required => true %>&nbsp;
 
