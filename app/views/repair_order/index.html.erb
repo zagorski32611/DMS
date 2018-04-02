@@ -1,7 +1,9 @@
 <%= render 'layouts/header' %>
 
 <h1> All Repair Orders </h1>
-<h3><%= link_to "Create New Repair Order", new_repair_order_url %>&nbsp;</h3>
+<h3><%= link_to "Create New Repair Order", new_repair_order_url, remote: true, :class=>"btn btn-primary" %>&nbsp;</h3>
+<div id="new_ro_form" style="display:none;"></div>
+</br>
 <%= form_tag(repair_orders_path, method: :get) do %>
     <%= label_tag " Search by Window Tag, VIN, Color, Make, Update Time or Due Date:" %>
     <%= text_field_tag :term, params[:term] %></br>
@@ -21,7 +23,9 @@
             <th> Miles </th>&nbsp;
             <th> Due Date </th>&nbsp;
             <th> Update Time </th>&nbsp;
+            <th> View </th>&nbsp;
             <th> Edit </th>&nbsp;
+            <th> Delete </th>&nbsp;
         <tr>
         <% @repair_order.each do | ro | %>
         <tr>
@@ -35,12 +39,12 @@
             <td><%= ro.miles %>
             <td><%= ro.due_date %></td>
             <td><%= ro.update_time %></td>
-            
+            <td><%= link_to 'View', edit_repair_order_path(ro) %>
             <td><%= link_to 'Edit', edit_repair_order_path(ro) %></td>
             <td><%= link_to 'Delete', {action: "destroy", id: ro.id }, method: :delete %></td>
         </tr>
         <% end %>
     <% else %>
-        <% link_to new_customer_path %>
+        <% link_to new_repair_order_path %>
     <% end %>
 </table>

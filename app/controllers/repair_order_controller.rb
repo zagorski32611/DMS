@@ -8,7 +8,7 @@ class RepairOrderController < ApplicationController
   end
 
   def show
-    @repair_orders = RepairOrder.last
+    @repair_orders = RepairOrder.find(params[:id])
   end
 
   def new
