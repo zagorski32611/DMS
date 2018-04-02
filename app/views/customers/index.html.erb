@@ -2,6 +2,12 @@
 
 <h3><%= link_to "Add New Customer", new_customer_path %>&nbsp;</h3>
 
+<%= form_tag(customers_path, method: :get) do %>
+    <%= label_tag "Search by Last Name, Phone Number or Email" %>
+    <%= text_field_tag :term, params[:term] %></br>
+    <%= submit_tag 'Search' %>
+<% end %>
+
 <table class="box">
     <% unless @customers.nil? %>
         <tr>

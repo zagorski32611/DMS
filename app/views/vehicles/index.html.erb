@@ -1,10 +1,6 @@
 <%= render 'layouts/header' %>
 
 <h3><%= link_to "Add New Vehicle", new_vehicle_path %>&nbsp;</h3>
-<% if false %>
-<a href="#" id="show_vehicle_search">Search Vehicles</a>
-<div id="hidden_vehicle_search" class="hidden"><%= render 'layouts/vehicle_search'%></div>
-<% end %>
 
 <%= form_tag(vehicles_path, method: :get) do %>
     <%= label_tag "Search by VIN, Make or Model" %>
