@@ -39,7 +39,7 @@
             <td><%= ro.miles %>
             <td><%= ro.due_date %></td>
             <td><%= ro.update_time %></td>
-            <td><%= link_to 'View', edit_repair_order_path(ro) %>
+            <td><%= link_to 'View', edit_repair_order_path(ro), remote: true %><div id="edit_ro_form" style="display:none;"></div></td>
             <td><%= link_to 'Edit', edit_repair_order_path(ro) %></td>
             <td><%= link_to 'Delete', {action: "destroy", id: ro.id }, method: :delete %></td>
         </tr>

@@ -2,23 +2,23 @@
   <%= form_for Customer.new do |f| %>
   <div class="form-inline text-center mb-3 ">
     <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name,  :required => true %>&nbsp;
+    <%= f.text_field :first_name,  :required => true %>
 
     <%= f.label :last_name %>
-    <%= f.text_field :last_name, :required => true %>&nbsp;
+    <%= f.text_field :last_name, :required => true %>
 
     <%= f.label :phone_number1 %>
     <%= f.text_field :phone_number1, :required => true %>&nbsp;
-
+    </br>
     <%= f.label :phone_number2 %>
-    <%= f.text_field :phone_number2 %>&nbsp;
+    <%= f.text_field :phone_number2 %>
 
     <%= f.label :email %>
     <%= f.text_field :email,  :required => true %>&nbsp;
 
     <%= f.label :email2 %>
     <%= f.text_field :email2 %>&nbsp;
-
+    </br>
     <%= f.label :street %>
     <%= f.text_field :street %>&nbsp;
 
@@ -30,7 +30,8 @@
 
     <%= f.label :zip %>
     <%= f.text_field :zip %>&nbsp;
-
+    </br>
     <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Cancel", customers_path%>
   <% end %>
 </div>

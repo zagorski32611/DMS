@@ -1,6 +1,7 @@
 <%= render 'layouts/header' %>
 
-<h3><%= link_to "Add New Customer", new_customer_path %>&nbsp;</h3>
+<h3><%= link_to "Add New Customer", new_customer_path, remote: true, :class=>"btn btn-primary" %>&nbsp;</h3>
+<div id="new_customer_form" style="display:none;"></div>
 
 <%= form_tag(customers_path, method: :get) do %>
     <%= label_tag "Search by Last Name, Phone Number or Email" %>
