@@ -3,7 +3,7 @@ class RepairOrderController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @repair_order = RepairOrder.all
+    @repair_order = RepairOrder.search(params[:term])
   end
 
   def show
