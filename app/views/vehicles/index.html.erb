@@ -1,12 +1,15 @@
 <%= render 'layouts/header' %>
 
 <h3><%= link_to "Add New Vehicle", new_vehicle_path %>&nbsp;</h3>
+<% if false %>
+<a href="#" id="show_vehicle_search">Search Vehicles</a>
+<div id="hidden_vehicle_search" class="hidden"><%= render 'layouts/vehicle_search'%></div>
+<% end %>
 
-
-<h3>Search Vehicles </h3>
 <%= form_tag(vehicles_path, method: :get) do %>
-  <%= text_field_tag :term %>
-  <%= submit_tag 'Search' %>
+    <%= label_tag "Search by VIN, Make or Model" %>
+    <%= text_field_tag :term, params[:term] %></br>
+    <%= submit_tag 'Search' %>
 <% end %>
 
 <table class="box">
@@ -34,7 +37,7 @@
         </tr>
         <% end %>
     <% else %>
-        <% link_to new_customer_path %>
+        <% link_to new_vehicle_path %>
     <% end %>
 </table>
   

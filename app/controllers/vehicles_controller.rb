@@ -19,9 +19,13 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(veh_params)
-    @vehicle.save
-    flash[:notice] = "Vehicle Saved!"
-    redirect_to vehicles_path
+    if @vehicle.save
+      flash[:success] = "Vehicle Saved!"
+      redirect_to vehicles_path
+    else
+      flash[:alert] = "Vehicle not saved!"
+      redirect_to new_vehicle_path
+    end
   end
 
   def update
