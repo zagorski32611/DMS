@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
+  respond_to :html, :js
 
   def index
     @vehicles = Vehicle.search(params[:term])
@@ -24,7 +25,7 @@ class VehiclesController < ApplicationController
       redirect_to vehicles_path
     else
       flash[:alert] = "Vehicle not saved!"
-      redirect_to new_vehicle_path
+      redirect_to vehicles_path
     end
   end
 

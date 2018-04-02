@@ -1,9 +1,12 @@
 <%= render 'layouts/header' %>
 
-<h3><%= link_to "Add New Vehicle", new_vehicle_path %>&nbsp;</h3>
+<h3><%= link_to "Add New Vehicle", new_vehicle_path, remote: true, :class=>"btn btn-primary" %>&nbsp;</h3>
+
+<div id="new_vehicle_form" style="display:none;"></div>
+
 
 <%= form_tag(vehicles_path, method: :get) do %>
-    <%= label_tag "Search by VIN, Make or Model" %>
+    <%= label_tag " Search by VIN, Make, Model, Color:" %>
     <%= text_field_tag :term, params[:term] %></br>
     <%= submit_tag 'Search' %>
 <% end %>
