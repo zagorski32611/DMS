@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
   has_many :vehicles
   has_many :repair_orders
+  accepts_nested_attributes_for :repair_orders
   # validates # use all params here!
   
   def self.search(term)

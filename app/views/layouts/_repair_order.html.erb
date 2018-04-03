@@ -1,39 +1,38 @@
-    <div class="form-inline align_left mb-3">
-      <%= form_for @repair_order  do |f| %>
-
-<div class="form-inline align-left mb-3 ">
+<div class="form-inline align_left ">
+<%= form_for @repair_order  do |f| %>
+    <div class="form-inline align-left mb-3 ">
 
     <h5> Customer Information </h5>
-    
-    <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name,  :required => true %>&nbsp;
+    <%= f.fields_for :customers do | customer_info |%>
+    <%= customer_info.label :first_name, "First Name" %>
+    <%= customer_info.text_field :first_name,  :required => true %>&nbsp;
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, :required => true %>&nbsp;
+    <%= customer_info.label :last_name %>
+    <%= customer_info.text_field :last_name, :required => true %>&nbsp;
     </br>
-    <%= f.label :phone_number1 %>
-    <%= f.text_field :phone_number1, :required => true %>
+    <%= customer_info.label :phone_number1 %>
+    <%= customer_info.text_field :phone_number1, :required => true %>
    
-    <%= f.label :phone_number2 %>
-    <%= f.text_field :phone_number2 %>&nbsp;
+    <%= customer_info.label :phone_number2 %>
+    <%= customer_info.text_field :phone_number2 %>&nbsp;
     </br>
-    <%= f.label :email %>
-    <%= f.text_field :email,  :required => true %>&nbsp;
+    <%= customer_info.label :email %>
+    <%= customer_info.text_field :email,  :required => true %>&nbsp;
     
-    <%= f.label :email2 %>
-    <%= f.text_field :email2 %>&nbsp;
+    <%= customer_info.label :email2 %>
+    <%= customer_info.text_field :email2 %>&nbsp;
     </br>
-    <%= f.label :street %>
-    <%= f.text_field :street %>&nbsp;
+    <%= customer_info.label :street %>
+    <%= customer_info.text_field :street %>&nbsp;
 
-    <%= f.label :city %>
-    <%= f.text_field :city %>&nbsp;
+    <%= customer_info.label :city %>
+    <%= customer_info.text_field :city %>&nbsp;
     </br>
-    <%= f.label :state %>
-    <%= f.text_field :state %>&nbsp;
+    <%= customer_info.label :state %>
+    <%= customer_info.text_field :state %>&nbsp;
 
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>&nbsp;
+    <%= customer_info.label :zip %>
+    <%= customer_info.text_field :zip %>&nbsp;
     </br>
 
     <h5> Vehicle Information </h5>
@@ -58,14 +57,14 @@
 
     <%= f.label :license_plate %>
     <%= f.text_field :license_plate %>&nbsp;
-
-    <%= f.submit "Save", class: "btn btn-primary" %>
+    <br>
     <%= f.label :line %>
     <%= f.text_area :line, size: '20x10' %>
+    
     </br>
-
     <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
     <% end %>
+    <% end %>
     <%= link_to "Cancel", repair_orders_path %>
-
+    </br>
     </div>
