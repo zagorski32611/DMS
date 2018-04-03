@@ -3,23 +3,24 @@
   <div class="form-inline text-center mb-3 ">
       <%= f.label :VIN %>
       <%= f.text_field :VIN,  :required => true %>
-
+      </br>
       <%= f.label :year %>
       <%= f.text_field :year, :required => true %></br>
 
       <%= f.label :make %>
       <%= f.text_field :make, :required => true %>
-
+      </br>
       <%= f.label :model %>
       <%= f.text_field :model, :required => true %></br>
 
       <%= f.label :trim %>
       <%= f.text_field :trim %>&nbsp;
-
+      </br>
       <%= f.label :color %>
       <%= f.text_field :color,  :required => true %></br>
       <%= f.label :miles %>
-      <%= f.text_field :miles %>&nbsp;
+      <%= f.text_field :miles %>
+      </br>
       <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
   <%= link_to "Cancel", vehicles_index_path %>

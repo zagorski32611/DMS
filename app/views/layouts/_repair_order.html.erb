@@ -1,51 +1,71 @@
     <div class="form-inline align_left mb-3">
       <%= form_for @repair_order  do |f| %>
 
-        <%= f.label :VIN %>
-        <%= f.text_field :VIN,  :required => true %>&nbsp;
+<div class="form-inline align-left mb-3 ">
 
-        <%= form_tag(new_vehicle_path, method: :get) do %>
-        <%= submit_tag 'Search VIN' %>
-        <% end %>
-        
-        </br>
-        <%= f.label :window_tag %>
-        <%= f.text_field :window_tag,  :required => true %>&nbsp;
+    <h5> Customer Information </h5>
+    
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name,  :required => true %>&nbsp;
 
-        <%= f.label :color %>
-        <%= f.text_field :color,  :required => true %>&nbsp;
-        <br/>
-        <br/>
-        <%= f.label :year %>
-        <%= f.text_field :year, :required => true %>&nbsp;
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :required => true %>&nbsp;
+    </br>
+    <%= f.label :phone_number1 %>
+    <%= f.text_field :phone_number1, :required => true %>
+   
+    <%= f.label :phone_number2 %>
+    <%= f.text_field :phone_number2 %>&nbsp;
+    </br>
+    <%= f.label :email %>
+    <%= f.text_field :email,  :required => true %>&nbsp;
+    
+    <%= f.label :email2 %>
+    <%= f.text_field :email2 %>&nbsp;
+    </br>
+    <%= f.label :street %>
+    <%= f.text_field :street %>&nbsp;
 
-        <%= f.label :make %>
-        <%= f.text_field :make, :required => true %>&nbsp;
+    <%= f.label :city %>
+    <%= f.text_field :city %>&nbsp;
+    </br>
+    <%= f.label :state %>
+    <%= f.text_field :state %>&nbsp;
 
-        <%= f.label :model %>
-        <%= f.text_field :model, :required => true %>&nbsp;
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>&nbsp;
+    </br>
 
-        <%= f.label :trim %>
-        <%= f.text_field :trim %>&nbsp;
-        <br/>
-        <br/>
-        <%= f.label :miles %>
-        <%= f.text_field :miles %>&nbsp;
+    <h5> Vehicle Information </h5>
 
-        <%= f.label :due_date %>
-        <%= f.text_field :due_date %>&nbsp;
+    <%= f.label :year %>
+    <%= f.text_field :year, :required => true %>
 
-        <%= f.label :update_time %>
-        <%= f.text_field :update_time %>&nbsp;
-        <br/>
-        <br/>
+    <%= f.label :make %>
+    <%= f.text_field :make, :required => true %>
+    </br>
+    <%= f.label :model %>
+    <%= f.text_field :model, :required => true %>
 
-        <%= f.label :line %>
-        <%= f.text_area :line, size: '50x10' %>
-        </br>
+    <%= f.label :trim %>
+    <%= f.text_field :trim %>&nbsp;
+    </br>
+    <%= f.label :color %>
+    <%= f.text_field :color,  :required => true %></br>
 
-      <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
-      <% end %>
-      <%= link_to "Cancel", repair_orders_path %>
+    <%= f.label :miles %>
+    <%= f.text_field :miles %>&nbsp;
+
+    <%= f.label :license_plate %>
+    <%= f.text_field :license_plate %>&nbsp;
+
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= f.label :line %>
+    <%= f.text_area :line, size: '20x10' %>
+    </br>
+
+    <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to "Cancel", repair_orders_path %>
 
     </div>

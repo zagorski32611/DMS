@@ -1,49 +1,55 @@
 <h1> Edit customer information </h1>
-<div class="form-inline center mb-3">
+<div class="form-inline  mb-3">
   <%= form_for @customers do |f| %>
-  <div class="form-inline text-center mb-3 ">
+  <div class="form-inline align-left mb-3 ">
+
+    <h5> Customer Information </h5>
+    
     <%= f.label :first_name, "First Name" %>
     <%= f.text_field :first_name,  :required => true %>&nbsp;
 
     <%= f.label :last_name %>
     <%= f.text_field :last_name, :required => true %>&nbsp;
-
+    </br>
     <%= f.label :phone_number1 %>
-    <%= f.text_field :phone_number1, :required => true %>&nbsp;
-
+    <%= f.text_field :phone_number1, :required => true %>
+   
     <%= f.label :phone_number2 %>
     <%= f.text_field :phone_number2 %>&nbsp;
-
+    </br>
     <%= f.label :email %>
     <%= f.text_field :email,  :required => true %>&nbsp;
-
+    
     <%= f.label :email2 %>
     <%= f.text_field :email2 %>&nbsp;
-
+    </br>
     <%= f.label :street %>
     <%= f.text_field :street %>&nbsp;
 
     <%= f.label :city %>
     <%= f.text_field :city %>&nbsp;
-
+    </br>
     <%= f.label :state %>
     <%= f.text_field :state %>&nbsp;
 
     <%= f.label :zip %>
     <%= f.text_field :zip %>&nbsp;
+    </br>
+
+    <h5> Vehicle Information </h5>
 
     <%= f.label :year %>
     <%= f.text_field :year, :required => true %>
 
     <%= f.label :make %>
     <%= f.text_field :make, :required => true %>
-
+    </br>
     <%= f.label :model %>
-    <%= f.text_field :model, :required => true %></br>
+    <%= f.text_field :model, :required => true %>
 
     <%= f.label :trim %>
     <%= f.text_field :trim %>&nbsp;
-
+    </br>
     <%= f.label :color %>
     <%= f.text_field :color,  :required => true %></br>
 
