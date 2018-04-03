@@ -32,6 +32,24 @@
     <%= f.label :zip %>
     <%= f.text_field :zip %>&nbsp;
 
+    <%= f.label :make %>
+    <%= f.text_field :make, :required => true %>
+
+    <%= f.label :model %>
+    <%= f.text_field :model, :required => true %></br>
+
+    <%= f.label :trim %>
+    <%= f.text_field :trim %>&nbsp;
+
+    <%= f.label :color %>
+    <%= f.text_field :color,  :required => true %></br>
+
+    <%= f.label :miles %>
+    <%= f.text_field :miles %>&nbsp;
+
+    <%= f.label :license_plate %>
+    <%= f.text_field :license_plate %>&nbsp;
+
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
 </div>

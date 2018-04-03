@@ -17,6 +17,10 @@
             <th> Phone Number 1 </th>&nbsp;
             <th> Phone Number 2 </th>&nbsp;
             <th> Email </th>&nbsp;
+            <th> Year </th>&nbsp;
+            <th> Make </th>&nbsp;
+            <th> Model </th>&nbsp;
+            <th> License Plate </th>&nbsp;
             <th> Edit </th>&nbsp;
             <th> Delete </th>&nbsp;
         <tr>
@@ -27,6 +31,10 @@
             <td><%= cust.phone_number1 %></td>
             <td><%= cust.phone_number1 %></td>
             <td><%= cust.email %></td>
+            <td><%= cust.year %></td>
+            <td><%= cust.make %></td>
+            <td><%= cust.model %></td>
+            <td><%= cust.license_plate %></td>
             <td><%= link_to 'Edit', edit_customer_path(cust) %></td>
             <td><%= link_to 'Delete', {action: "destroy", id: cust.id }, method: :delete %></td>
         </tr>
