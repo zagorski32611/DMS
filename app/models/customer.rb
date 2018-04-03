@@ -6,8 +6,8 @@ class Customer < ApplicationRecord
   def self.search(term)
     if term
       where('last_name LIKE ? OR phone_number1 LIKE ? OR phone_number2 LIKE ? OR 
-             email LIKE ? OR email2 LIKE ?', "%#{term}%", "%#{term}%", "%#{term}%",
-             "%#{term}%",  "%#{term}%")
+             email LIKE ? OR email2 LIKE ? OR license_plate LIKE ?', "%#{term}%", "%#{term}%", "%#{term}%",
+             "%#{term}%",  "%#{term}%", "%#{term}%")
     else
       all
     end
