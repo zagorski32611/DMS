@@ -1,47 +1,58 @@
-<%= javascript_include_tag 'search-ro' %>
-<%= render 'layouts/header' %>
+ <% content_for :javascript do %>
+    <%= javascript_include_tag 'search-ro' %>
+ <% end %>
 
-<h1> All Repair Orders </h1>
-<h3><%= link_to "Create New Repair Order", new_repair_order_url %>&nbsp;</h3>
-<%= form_tag(repair_orders_path, method: :get) do %>
-    <%= label_tag " Search by Window Tag, VIN, Color, Make, Update Time or Due Date:" %>
-    <%= text_field_tag :term, params[:term] %></br>
-    <%= submit_tag 'Search' %>
-<% end %>
+<header>
+    <%= render 'layouts/header' %>
+    <h1> All Repair Orders </h1>
+</header>
 
-<table class="box">
-    <% unless @repair_order.nil? %>
-        <tr>
-            <th> VIN </th>&nbsp;
-            <th> Window Tag </th>&nbsp;
-            <th> Color </th>&nbsp;
-            <th> Year </th>&nbsp;
-            <th> Make </th>&nbsp;
-            <th> Model </th>&nbsp;
-            <th> Trim </th>&nbsp;
-            <th> Miles </th>&nbsp;
-            <th> Due Date </th>&nbsp;
-            <th> Update Time </th>&nbsp;
-            <th> Edit </th>&nbsp;
-        <tr>
-        <% @repair_order.each do | ro | %>
-        <tr>
-            <td><%= ro.VIN %></td>
-            <td><%= ro.window_tag %></td>
-            <td><%= ro.color %></td>
-            <td><%= ro.year %></td>
-            <td><%= ro.make %></td>
-            <td><%= ro.model %></td>
-            <td><%= ro.trim %></td>
-            <td><%= ro.miles %>
-            <td><%= ro.due_date %></td>
-            <td><%= ro.update_time %></td>
-            
-            <td><%= link_to 'Edit', edit_repair_order_path(ro) %></td>
-            <td><%= link_to 'Delete', {action: "destroy", id: ro.id }, method: :delete %></td>
-        </tr>
+<body>
+    <div id="create-ro-button">
+        <button class="btn btn-primary" id="create-button">Create New Repair Order</button>
+    </div>
+    <div id="ro-create">
+        <%= render 'layouts/repair_order' %>
+    </div>
+
+    <div id="ro-search">
+        <%= render 'layouts/ro_search' %>
+    </div>
+
+    <table >
+        <% unless @repair_order.nil? %>
+            <tr>
+                <th> VIN </th>&nbsp;
+                <th> Window Tag </th>&nbsp;
+                <th> Color </th>&nbsp;
+                <th> Year </th>&nbsp;
+                <th> Make </th>&nbsp;
+                <th> Model </th>&nbsp;
+                <th> Trim </th>&nbsp;
+                <th> Miles </th>&nbsp;
+                <th> Due Date </th>&nbsp;
+                <th> Update Time </th>&nbsp;
+                <th> Edit </th>&nbsp;
+            <tr>
+            <% @repair_order.each do | ro | %>
+            <tr>
+                <td><%= ro.VIN %></td>
+                <td><%= ro.window_tag %></td>
+                <td><%= ro.color %></td>
+                <td><%= ro.year %></td>
+                <td><%= ro.make %></td>
+                <td><%= ro.model %></td>
+                <td><%= ro.trim %></td>
+                <td><%= ro.miles %>
+                <td><%= ro.due_date %></td>
+                <td><%= ro.update_time %></td>
+                
+                <td><%= link_to 'Edit', edit_repair_order_path(ro) %></td>
+                <td><%= link_to 'Delete', {action: "destroy", id: ro.id }, method: :delete %></td>
+            </tr>
+            <% end %>
+        <% else %>
+            <% link_to new_customer_path %>
         <% end %>
-    <% else %>
-        <% link_to new_customer_path %>
-    <% end %>
-</table>
+    </table>
+</body>

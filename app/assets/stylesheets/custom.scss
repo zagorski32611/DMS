@@ -161,11 +161,11 @@ aside {
   }
 
 /* Repair Orders */
-ro-search {
-  display: block
+#ro-search {
+  display: none;
 }
 
-ro-create {
-  display: block
+#ro-create {
+  display: none;
 }
 }
