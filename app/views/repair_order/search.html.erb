@@ -1,0 +1,5 @@
+<%= form_tag(repair_orders_path, method: :get) do %>
+    <%= label_tag " Search by Window Tag, VIN, Color, Make, Update Time or Due Date:" %>
+    <%= text_field_tag :term, params[:term] %></br>
+    <%= submit_tag 'Search' %>
+<% end %>
