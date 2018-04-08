@@ -1,0 +1,21 @@
+<% unless @repair_order.nil? %>
+    <% @repair_order.each do |ro | %>
+        <div class="card" style="width: 40rem;">
+            <div class="card-block">
+                <h4 class="card-title"> 
+                    Repair Order Number: <%= ro.id %></br>
+                    Tag: <%= ro.window_tag %>
+                </h4>
+                <p class="card-text"> 
+                    Color: <%= ro.color %>
+                    Year: <%= ro.year %> 
+                    Make: <%= ro.make %></br> 
+                    Model: <%= ro.model %> 
+                    Due Date: <%= ro.due_date %></br>
+                    Update Time: <%= ro.update_time %></br>
+                    <h4><%= link_to "Edit", edit_repair_order_path(ro) %></h4>
+                </p>
+            </div>
+        </div>
+    <% end %>
+<% end %>

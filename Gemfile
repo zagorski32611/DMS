@@ -17,7 +17,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'loofah', '~> 2.2.1'
 gem 'browser-timezone-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.3.7'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+# I have to use jquery for bootstrap:
+gem 'jquery-rails'
+gem 'popper_js'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
