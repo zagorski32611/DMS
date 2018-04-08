@@ -1,7 +1,6 @@
-<body>
-        <%= form_tag(vehicles_path, method: :get) do %>
-            <%= label_tag " Search by VIN, Make, Model, Color:" %>
-            <%= text_field_tag :term, params[:term] %></br>
-            <%= submit_tag 'Search' %>
-        <% end %>
-</body>
+<%= form_tag(vehicles_path, method: :get) do %>
+    <%= label_tag " Search by VIN, Make, Model, Color:" %>
+    <%= text_field_tag :term, params[:term] %></br>
+    <%= submit_tag 'Search' %>
+<% end %>
+

@@ -8,7 +8,7 @@
     <div id="create-ro-button">
         <button class="btn btn-primary">Create New Repair Order</button>
     </div>
-    
+
     <div id="ro-create">
         <%= render 'layouts/repair_order' %>
     </div>
@@ -17,7 +17,7 @@
         <%= render 'layouts/ro_search' %>
     </div>
 
-    <table>
+    <table class="box">
         <% unless @repair_order.nil? %>
             <tr>
                 <th> VIN </th>&nbsp;
