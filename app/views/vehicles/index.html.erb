@@ -1,42 +1,48 @@
-<%= render 'layouts/header' %>
+<%= javascript_include_tag 'create-vehicle.js'%>
+<header>
+    <%= render 'layouts/header' %>
+</header>
 
-<h3><%= link_to "Add New Vehicle", new_vehicle_path, remote: true, :class=>"btn btn-primary" %>&nbsp;</h3>
 
-<div id="new_vehicle_form" style="display:none;"></div>
+<body>
+    <div id="new_vehicle_button">
+        <button class="btn btn-primary"> Add New Vehicle</button>
+    </div>
 
+    <div id="new_vehicle_form">
+        <%= render 'layouts/new_vehicle'%>
+    </div>
 
-<%= form_tag(vehicles_path, method: :get) do %>
-    <%= label_tag " Search by VIN, Make, Model, Color:" %>
-    <%= text_field_tag :term, params[:term] %></br>
-    <%= submit_tag 'Search' %>
-<% end %>
+    <div id="search_vehicle_form">
+        <%= render 'layouts/search_vehicle' %>
+    </div>
 
-<table class="box">
-    <% unless @vehicles.nil? %>
-        <tr>
-            <th> VIN </th>&nbsp;
-            <th> Make </th>&nbsp;
-            <th> Model </th>&nbsp;
-            <th> Trim </th>&nbsp;
-            <th> Miles </th>&nbsp;
-            <th> Color </th>&nbsp;
-            <th> Edit </th>&nbsp;
-            <th> Delete </th>&nbsp;
-        <tr>
-        <% @vehicles.each do | veh | %>
-        <tr>
-            <td><%= veh.VIN %></td>
-            <td><%= veh.make %></td>
-            <td><%= veh.model %></td>
-            <td><%= veh.trim %></td>
-            <td><%= veh.miles %></td>
-            <td><%= veh.color %></td>
-            <td><%= link_to 'Edit', edit_vehicle_path(veh) %></td>
-            <td><%= link_to 'Delete', {action: "destroy", id: veh.id }, method: :delete %></td>
-        </tr>
+    <table class="box">
+        <% unless @vehicles.nil? %>
+            <tr>
+                <th> VIN </th>&nbsp;
+                <th> Make </th>&nbsp;
+                <th> Model </th>&nbsp;
+                <th> Trim </th>&nbsp;
+                <th> Miles </th>&nbsp;
+                <th> Color </th>&nbsp;
+                <th> Edit </th>&nbsp;
+                <th> Delete </th>&nbsp;
+            <tr>
+            <% @vehicles.each do | veh | %>
+            <tr>
+                <td><%= veh.VIN %></td>
+                <td><%= veh.make %></td>
+                <td><%= veh.model %></td>
+                <td><%= veh.trim %></td>
+                <td><%= veh.miles %></td>
+                <td><%= veh.color %></td>
+                <td><%= link_to 'Edit', edit_vehicle_path(veh) %></td>
+                <td><%= link_to 'Delete', {action: "destroy", id: veh.id }, method: :delete %></td>
+            </tr>
+            <% end %>
+        <% else %>
+            <% link_to new_vehicle_path %>
         <% end %>
-    <% else %>
-        <% link_to new_vehicle_path %>
-    <% end %>
-</table>
-  
+    </table>
+</body>    
