@@ -1,36 +1,46 @@
-<%= render 'layouts/header' %>
+<%= javascript_include_tag 'create-customer.js' %>
+<header>
+    <%= render 'layouts/header' %>
+    <h1> Customers </h1>
+</header>
 
-<h3><%= link_to "Add New Customer", new_customer_path %>&nbsp;</h3>
+<body>
+    <div id="add-customer-button">
+        <button class="btn btn-primary"> Add New Customer</button>
+    </div>
+        
+    <div id="add-customer-form">
+        <%= render 'layouts/new_customer' %>
+    </div>
+    </div>
+    <div id="search-customer">
+        <%= render 'layouts/search_customer' %>
+    </div>
 
-<%= form_tag(customers_path, method: :get) do %>
-    <%= label_tag "Search by Last Name, Phone Number or Email" %>
-    <%= text_field_tag :term, params[:term] %></br>
-    <%= submit_tag 'Search' %>
-<% end %>
-
-<table class="box">
-    <% unless @customers.nil? %>
-        <tr>
-            <th> First Name </th>&nbsp;
-            <th> Last Name </th>&nbsp;
-            <th> Phone Number 1 </th>&nbsp;
-            <th> Phone Number 2 </th>&nbsp;
-            <th> Email </th>&nbsp;
-            <th> Edit </th>&nbsp;
-            <th> Delete </th>&nbsp;
-        <tr>
-        <% @customers.each do | cust | %>
-        <tr>
-            <td><%= cust.first_name %></td>
-            <td><%= cust.last_name %></td>
-            <td><%= cust.phone_number1 %></td>
-            <td><%= cust.phone_number1 %></td>
-            <td><%= cust.email %></td>
-            <td><%= link_to 'Edit', edit_customer_path(cust) %></td>
-            <td><%= link_to 'Delete', {action: "destroy", id: cust.id }, method: :delete %></td>
-        </tr>
+    <table class="box">
+        <% unless @customers.nil? %>
+            <tr>
+                <th> First Name </th>&nbsp;
+                <th> Last Name </th>&nbsp;
+                <th> Phone Number 1 </th>&nbsp;
+                <th> Phone Number 2 </th>&nbsp;
+                <th> Email </th>&nbsp;
+                <th> Edit </th>&nbsp;
+                <th> Delete </th>&nbsp;
+            <tr>
+            <% @customers.each do | cust | %>
+            <tr>
+                <td><%= cust.first_name %></td>
+                <td><%= cust.last_name %></td>
+                <td><%= cust.phone_number1 %></td>
+                <td><%= cust.phone_number1 %></td>
+                <td><%= cust.email %></td>
+                <td><%= link_to 'Edit', edit_customer_path(cust) %></td>
+                <td><%= link_to 'Delete', {action: "destroy", id: cust.id }, method: :delete %></td>
+            </tr>
+            <% end %>
+        <% else %>
+            <% link_to new_customer_path %>
         <% end %>
-    <% else %>
-        <% link_to new_customer_path %>
-    <% end %>
-</table>
+    </table>
+</body>

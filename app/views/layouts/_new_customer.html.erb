@@ -27,10 +27,12 @@
 
     <%= f.label :state %>
     <%= f.text_field :state %>&nbsp;
-
+  
     <%= f.label :zip %>
     <%= f.text_field :zip %>&nbsp;
-
     <%= f.submit "Save", class: "btn btn-primary" %>
+    <div id="cancel-customer-button">
+      <button> Cancel </button> 
+    </div>
   <% end %>
 </div>
