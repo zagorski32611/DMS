@@ -30,8 +30,9 @@
     <%= f.text_field :state %>&nbsp;
 
     <%= f.label :zip %>
-    <%= f.text_field :zip %>&nbsp;
+    <%= f.text_field :zip %>
 
     <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Cancel", vehicle_index_path %>
   <% end %>
 </div>

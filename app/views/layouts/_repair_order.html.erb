@@ -1,48 +1,50 @@
-    <div class="form-inline center mb-3">
-      <%= form_for RepairOrder.new  do |f| %>
+   </body>
+      <div class="form-inline center mb-3">
+        <%= form_for RepairOrder.new  do |f| %>
 
-        <%= f.label :VIN %>
-        <%= f.text_field :VIN,  :required => true %>&nbsp;
+          <%= f.label :VIN %>
+          <%= f.text_field :VIN,  :required => true %>&nbsp;
 
-        <%= f.label :window_tag %>
-        <%= f.text_field :window_tag,  :required => true %>&nbsp;
+          <%= f.label :window_tag %>
+          <%= f.text_field :window_tag,  :required => true %>&nbsp;
 
-        <%= f.label :color %>
-        <%= f.text_field :color,  :required => true %>&nbsp;
-        <br/>
-        <br/>
-        <%= f.label :year %>
-        <%= f.text_field :year, :required => true %>&nbsp;
+          <%= f.label :color %>
+          <%= f.text_field :color,  :required => true %>&nbsp;
+          <br/>
+          <br/>
+          <%= f.label :year %>
+          <%= f.text_field :year, :required => true %>&nbsp;
 
-        <%= f.label :make %>
-        <%= f.text_field :make, :required => true %>&nbsp;
+          <%= f.label :make %>
+          <%= f.text_field :make, :required => true %>&nbsp;
 
-        <%= f.label :model %>
-        <%= f.text_field :model, :required => true %>&nbsp;
+          <%= f.label :model %>
+          <%= f.text_field :model, :required => true %>&nbsp;
 
-        <%= f.label :trim %>
-        <%= f.text_field :trim %>&nbsp;
-        <br/>
-        <br/>
-        <%= f.label :miles %>
-        <%= f.text_field :miles %>&nbsp;
+          <%= f.label :trim %>
+          <%= f.text_field :trim %>&nbsp;
+          <br/>
+          <br/>
+          <%= f.label :miles %>
+          <%= f.text_field :miles %>&nbsp;
 
-        <%= f.label :due_date %>
-        <%= f.text_field :due_date %>&nbsp;
+          <%= f.label :due_date %>
+          <%= f.text_field :due_date %>&nbsp;
 
-        <%= f.label :update_time %>
-        <%= f.text_field :update_time %>&nbsp;
-        <br/>
-        <br/>
+          <%= f.label :update_time %>
+          <%= f.text_field :update_time %>&nbsp;
+          <br/>
+          <br/>
 
-        <%= f.label :line %>
-        <%= f.text_area :line, size: '50x10' %>
-        </br>
+          <%= f.label :line %>
+          <%= f.text_area :line, size: '50x10' %>
+          </br>
 
-      <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
-      <% end %>
-      <div id="cancel-ro">
-        <button>Cancel</button>
+        <%= f.submit "Create Repair Order", class: "btn btn-primary" %>
+        <% end %>
+        <div id="cancel-ro">
+          <button>Cancel</button>
+        </div>
+
       </div>
-
-    </div>
+  <body>
