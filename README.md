@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dealership Management Software. A could-based management system for managing customer, vehicle inventory, parts inventory and repair order.
+Built on the following technologies:
 
-Things you may want to cover:
+* Ruby 2.3.1
 
-* Ruby version
+* Rails 5.1.6
 
-* System dependencies
+* Vanilla Javascript Front End
 
-* Configuration
+* MySQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
