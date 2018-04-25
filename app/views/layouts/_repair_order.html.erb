@@ -35,9 +35,15 @@
           <%= f.text_field :update_time %>&nbsp;
           <br/>
           <br/>
-
-          <%= f.label :line %>
-          <%= f.text_area :line, size: '50x10' %>
+          <%= f.fields_for :line, OpenStruct.new(RepairOrder.new.line) do |f2| %>
+            <%= f2.label :description %>
+            <%= f2.text_field :description, size: '50x10' %>
+            <%= f2.label :hours %>
+            <%= f2.text_field :hours %>
+            <%= f2.label :part %>
+            <%= f2.text_field :part %>
+          <% end %>
+          </br>
           </br>
 
         <%= f.submit "Create Repair Order", class: "btn btn-primary" %>

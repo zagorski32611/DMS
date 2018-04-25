@@ -3,6 +3,7 @@ class RepairOrder < ApplicationRecord
     has_one :customer
     has_one :vehicle
     # validates # Require Params here!
+    serialize :line, Hash
 
     def self.search(term)
         if term

@@ -20,4 +20,3 @@ function cancelRO() {
     document.querySelector("#ro-create").style.display = "none";
   });
 }
-
