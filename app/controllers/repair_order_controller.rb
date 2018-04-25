@@ -53,7 +53,7 @@ class RepairOrderController < ApplicationController
   def ro_params
     params.require(:repair_order).permit(:VIN, :window_tag,
                   :color, :year, :make, :model, :trim, :miles, :due_date,
-                  :update_time, :line)
+                  :update_time, line: {})
   end
 
 end
