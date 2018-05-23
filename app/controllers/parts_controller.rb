@@ -48,6 +48,5 @@ class PartsController < ApplicationController
     def part_params
         params.require(:part).permit(:name, :part_number, :desctiption, :cost_per_unit, :retail_price, :in_stock)
     end
-    
 
 end
