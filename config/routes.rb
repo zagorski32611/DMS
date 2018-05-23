@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :repair_orders, controller: 'repair_order'
   resources :vehicles, controller: 'vehicles'
   resources :customers, controller: 'customers'
+  resources :parts, contoller: 'parts'
 end
