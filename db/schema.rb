@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20180425002946) do
     t.string "phone_number2"
     t.string "email"
     t.string "email2"
-    t.string "vin"
-    t.string "year"
-    t.string "make"
-    t.string "model"
-    t.string "trim"
-    t.string "miles"
-    t.string "color"
-    t.string "license_plate"
   end
 
   create_table "repair_orders", force: :cascade do |t|

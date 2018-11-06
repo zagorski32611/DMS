@@ -21,30 +21,36 @@
     <div id="ro-index">
         <%= render 'layouts/ro_index'%>
     </div>
-
-    <% unless @repair_order.nil? %>
-    <% @repair_order.each do |ro | %>
-    <span class="border">
-        <div class="card border" style="width: 40rem;">
-            <div class="card-block">
-                <h4 class="card-title"> 
-                    Repair Order Number: <%= ro.id %></br>
-                    Tag: <%= ro.window_tag %>
-                </h4>
-                <p class="card-text"> 
-                    Color: <%= ro.color %></br>
-                    Year: <%= ro.year %></br>
-                    Make: <%= ro.make %></br> 
-                    Model: <%= ro.model %></br>
-                    Due Date: <%= ro.due_date %></br>
-                    Update Time: <%= ro.update_time %></br>
-                    <h4><%= link_to "Edit", edit_repair_order_path(ro) %></h4>
-                </p>
-            </div>
-        </div>
-    </span>
+    <table class="table">
+    <% unless @repair_orders.nil? %>
+        <tr>
+            <th> Color </th>
+            <th> Year </th>
+            <th> Make </th>
+            <th> Model </th>
+            <th> Window Tag </th>
+            <th> Tech </th>
+            <th> Advisor </th>
+            <th> Due Date </th>
+            <th> Update Time </th>
+            <th> Line Item </th>
+            <th> Edit </th>
+        </tr>
+        
+        <% @repair_orders.each do |ro | %>
+        <tr>
+            <td><%= ro.color %></td>
+            <td><%= ro.year %></td>
+            <td><%= ro.make %></td>
+            <td><%= ro.model %></td>
+            <td><%= ro.window_tag %></td>
+            <td>Advisor</td>
+            <td>Tech</td>
+            <td><%= ro.due_date %></td>
+            <td><%= ro.update_time %></td>
+            <td><%= ro.line["description"] %></td>
+            <td id="edit-ro"><%= link_to "Edit", edit_repair_order_path(ro) %><td>
+        </tr>
+        <% end %>
     <% end %>
-<% end %>
-
-</body>
-
+    </table>
