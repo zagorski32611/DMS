@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'edit_lines'%>
 <div class="form-inline center mb-3">
       <%= form_for @repair_order  do |f| %>
 
@@ -36,20 +37,23 @@
         <%= f.text_field :update_time %>&nbsp;
         <br/>
         <br/>
-
+        <div id="line">
         <%= f.fields_for :line, OpenStruct.new(RepairOrder.new.line) do |f2| %>
             <%= f2.label :description %>
-            <%= f2.text_field :description, size: '50x10' %>
+            <%= f2.text_field :description, size: '50x50' %>
             <%= f2.label :hours %>
             <%= f2.text_field :hours %>
             <%= f2.label :part %>
             <%= f2.text_field :part %>
+            <button class="btn btn-primary" onclick="addFields()">Add Line Item</button>
         <% end %>
-        </br>
+        </div>
+        <div id="container">
+        </div>
+        <%= f.submit "Update Repair Order", class: "btn btn-primary" %>
+        <% end %>
+        <%= link_to "Cancel", repair_orders_path %>
 
-      <%= f.submit "Update Repair Order", class: "btn btn-primary" %>
-      <% end %>
-      <%= link_to "Cancel", repair_orders_path %>
 
-    </div>
+   
 

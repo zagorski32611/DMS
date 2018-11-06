@@ -13,4 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w(create-ro.js create-vehicle.js create-customer.js)  
+Rails.application.config.assets.precompile += %w(create-ro.js create-vehicle.js create-customer.js edit_lines.js)  
